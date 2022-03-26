@@ -1,11 +1,13 @@
 # Funding Service
 
+This [FastAPI](https://fastapi.tiangolo.com/) is a simple service that airdrops 10 $SUB token to a user's wallet in order to interact with the SubNav Subnet of the [SubNav](https://subnav.network) service.
+
 ## TL;DR
 
 ```
 poetry install
 poetry shell
-uvicorn main:app --reload
+./start.sh
 ```
 
 ## Usage
