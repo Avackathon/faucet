@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from web3 import Web3
 
 import os
@@ -18,8 +19,22 @@ with open("files/account.key") as f:
 # start FastAPI
 app = FastAPI()
 
+# cors param
+origins = [
+    "https://test.dollarbillz.xyz",
+    "https://dollarbillz.xyz",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # faucet endpoint
-@app.put("/faucet/{address}")
+@app.get("/faucet/{address}")
 async def fund_wallet(address: str):
     # get the nonce.  Prevents one from sending the transaction twice
     nonce = web3.eth.getTransactionCount(account_1)
