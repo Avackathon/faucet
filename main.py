@@ -9,9 +9,11 @@ network_rpc = os.getenv("NETWORK_RPC", "https://api.avax-test.network/ext/bc/C/r
 # connect to the network
 web3 = Web3(Web3.HTTPProvider(network_rpc))
 
-# SubNav subnet prefunded account
-account_1 = '0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC'
-private_key1 = '56289e99c94b6912bfc12adc093c9b51124f0dc54ac7a766b2bc5ccf558d8027'
+# Read SubNav subnet prefunded account's keys
+with open("files/account.pub") as f:
+    account_1 = f.read().replace('\n', '')
+with open("files/account.key") as f:
+    private_key1 = f.read().replace('\n', '')
 
 # start FastAPI
 app = FastAPI()
