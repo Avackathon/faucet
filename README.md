@@ -1,8 +1,12 @@
-# Funding Service
+# SubNav Faucet
+
+This repository contains the faucet backend for the [SubNav](https://github.com/Avackathon/subnav) project.
 
 This [FastAPI](https://fastapi.tiangolo.com/) is a simple service that airdrops 10 $SUB token to a user's wallet in order to interact with the **SubNav Subnet** of the [SubNav](https://subnav.network) service.
 
-## TL;DR
+It is automatically called upon Metamask login on [SubNav](https://subnav.network).
+
+## Quick start
 
 ```
 poetry install
