@@ -5,7 +5,7 @@ from web3 import Web3
 import os
 
 # env variables
-network_rpc = os.getenv("NETWORK_RPC", "https://api.avax-test.network/ext/bc/C/rpc")
+network_rpc = os.getenv("NETWORK_RPC", "https://fuji.subnav.network/ext/bc/subnav/rpc")
 
 # connect to the network
 web3 = Web3(Web3.HTTPProvider(network_rpc))
@@ -21,8 +21,8 @@ app = FastAPI()
 
 # cors param
 origins = [
-    "https://test.dollarbillz.xyz",
-    "https://dollarbillz.xyz",
+    "https://api.subnav.network",
+    "https://subnav.network",
 ]
 
 app.add_middleware(
